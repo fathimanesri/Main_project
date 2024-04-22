@@ -1,0 +1,40 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<title>Untitled Document</title>
+</head>
+
+<body>
+<form id="form1" name="form1" method="post" action="">
+  <table width="238" height="131" border="1">
+    <tr>
+      <td colspan="3">police station      
+        <label>
+        <select name="select">
+        </select>
+      </label></td>
+      <td width="79"><label>
+         <input type="submit" name="Submit" value="Search" />
+      </label></td>
+    </tr>
+    <tr>
+      <td width="50">Criminal</td>
+      <td width="36">Photo</td>
+      <td width="45">Age</td>
+      <td>Place</td>
+    </tr>
+     {% for i in val %}
+    <tr>
+        <td>{{ i.Fname}} {{ i.lname }}</td>
+      <td>{{ i.photo}}</td>
+        <td>&nbsp;{{ i.age}}</td>
+          <td>{{ i.place}}</td>
+
+
+    </tr>
+      {% endfor %}
+  </table>
+</form>
+</body>
+</html>
