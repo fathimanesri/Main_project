@@ -1,0 +1,37 @@
+{% extends 'police station/index.html' %}
+{% block body %}
+<form id="form1" name="form1" method="post" action="/viewcomplaintsrch#constructions">
+  <table width="288" height="148" border="1" class="table table-striped">
+    <tr>
+      <td height="50" colspan="5">Date
+      <input type="date" name="textfield"  required/>
+      <label>
+      <input type="submit" name="Submit" value="Search" class="btn btn-outline-info" />
+</label></td>
+    </tr>
+    <tr class="table table-dark">
+      <td >Complaint</td>
+      <td >Date</td>
+      <td>User</td>
+
+      <td width="60">&nbsp;</td>
+    </tr>
+            {% for i in value %}
+
+    <tr>
+      <td>{{ i.complaint_details }}</td>
+      <td>{{ i.date }}</td>
+      <td>{{ i.userid.fname }} {{ i.userid.lname }}</td>
+                {% if i.reply == 'pending' %}
+
+      <td><a href="sentreport/{{ i.id }}#constructions" class="btn btn-outline-success">Report</a></td>
+                {% else %}
+                <td>report added </td>
+                {% endif %}
+            {% endfor %}
+
+    </tr>
+
+  </table>
+</form>
+{% endblock %}

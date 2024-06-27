@@ -1,0 +1,38 @@
+{% extends 'police station/index.html' %}
+{% block body %}
+<form id="form1" name="form1" method="post" action="/managecriminallistsrch#constructions">
+  <table width="299" border="1" class="table table-striped">
+    <tr>
+      <td colspan="5" align="center">name
+        <label>
+        <input type="text" name="textfield" required/>
+      </label>
+      <label>
+      <input type="submit" name="Submit2" value="Search"  class="btn btn-outline-info" />
+</label></td>
+    </tr>
+    <tr lass="table table-dark">
+      <td>Name</td>
+      <td >Photo</td>
+      <td >Place</td>
+      <td>Age</td>
+      <td >&nbsp;</td>
+    </tr>
+    {% for i in val %}
+    <tr>
+
+       <td>{{ i.Fname }} </td>
+      <td><img src="{{ i.photo.url }}"height="100" width="100"> </td>
+      <td>{{ i.place }}</td>
+        <td>{{ i.age }}</td>
+      <td><p><a href="editcriminal/{{ i.id }}#constructions" class="btn btn-outline-success">Edit</a></p>
+      <p><a href="deletecriminal/{{ i.id }}"  class="btn btn-outline-danger">Delete</a></p></td>
+    </tr>
+                        {% endfor %}
+
+    <tr>
+      <td height="61" colspan="5"><label><a href="addcriminallist#constructions"  class="btn btn-outline-primary">Add new</a></label></td>
+    </tr>
+  </table>
+</form>
+{% endblock %}

@@ -1,0 +1,23 @@
+{% extends 'police station/index.html' %}
+{% block body %}
+<form id="form1" name="form1" method="post" action="">
+  <table width="203" height="80" border="1" class="table table-striped">
+    <tr class="table table-dark">
+      <td >Police</td>
+      <td >Task</td>
+      <td>Date</td>
+      <td >Report</td>
+    </tr>
+      {% for i in value %}
+    <tr>
+      <td>{{ i.policeid.Name}}</td>
+      <td>&nbsp;{{ i.task }}</td>
+      <td>{{ i.date }}</td>
+      <td>{{ i.report}}</td>
+
+
+    </tr>
+      {% endfor %}
+  </table>
+</form>
+{% endblock %}

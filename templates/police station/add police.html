@@ -1,0 +1,57 @@
+{% extends 'police station/index.html' %}
+{% block body %}
+<form id="form1" name="form1" method="post" action="police">
+  <table width="258" height="254" border="1" class="table table-striped">
+    <tr>
+      <td width="61">Name</td>
+      <td width="181"><label>
+        <input type="text" name="textfield"  class="form-control"    required/>
+      </label></td>
+    </tr>
+    <tr>
+      <td>Place</td>
+      <td><label>
+        <input type="text" name="textfield2" class="form-control"    required/>
+      </label></td>
+    </tr>
+    <tr>
+      <td>Phone</td>
+      <td><label>
+        <input type="text" name="phone" class="form-control"    required/>
+      </label></td>
+    </tr>
+    <tr>
+      <td>Gender</td>
+      <td><label>
+        <input name="radiobutton" type="radio" value="male" checked required />
+      Male<br />
+      <input name="radiobutton" type="radio" value="female" checked  required/>
+      Female</label></td>
+    </tr>
+       <tr>
+      <td>email</td>
+      <td><label>
+        <input type="email" name="textfield4" class="form-control"    required/>
+      </label></td>
+    </tr>
+    <tr>
+      <td>Username</td>
+      <td><label>
+        <input type="text" name="textfield5" class="form-control"    required/>
+      </label></td>
+    </tr>
+    <tr>
+      <td>Password</td>
+      <td><label>
+        <input type="password" name="textfield6" class="form-control"    required />
+      </label></td>
+    </tr>
+
+    <tr>
+      <td colspan="2"><label>
+        <input type="submit" name="Submit" value="Add" />
+      </label></td>
+    </tr>
+  </table>
+</form>
+{% endblock %}

@@ -1,0 +1,34 @@
+{% extends 'police station/index.html' %}
+{% block body %}
+<form id="form1" name="form1" method="post" action="taskstatussrch#constructions">
+  <table width="232" height="113" border="1" class="table table-striped">
+    <tr>
+        <td colspan="3">Police
+        <label>
+        <select name="select">
+             {% for i in val1 %}
+            <option {% if a == i.id %}selected{% endif %} value="{{ i.id }}">{{ i.Name }}</option>
+                 {% endfor %}
+        </select>
+
+
+      </label>
+        <label>
+        <input type="submit" name="Submit" value="Search" class="btn btn-outline-info" />
+      </label></td>
+    </tr>
+    <tr class="table table-dark">
+      <td>Task</td>
+      <td >Date</td>
+      <td>Status</td>
+    </tr>
+     {% for i in val %}
+    <tr>
+      <td>{{ i.task}}</td>
+      <td>&nbsp;{{ i.date }}</td>
+      <td>{{ i.status }}</td>
+    </tr>
+      {% endfor %}
+  </table>
+</form>
+{% endblock %}

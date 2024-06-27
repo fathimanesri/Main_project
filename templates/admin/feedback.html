@@ -1,0 +1,30 @@
+{% extends 'admin/index.html' %}
+{% block body %}
+
+<form id="form1" name="form1" method="post" action="feedbacksrch">
+  <table  border="1" class="table table striped">
+    <tr>
+      <td colspan="4">Date
+        <label>
+        <input type="date" name="textfield"  required/>
+        </label>        <label>
+        <input type="submit" name="Submit" value="Search"  class="btn btn-outline-info"/>
+        </label></td>
+    </tr>
+    <tr class="table table-dark">
+      <td >User</td>
+      <td>Feedback</td>
+      <td >Rating</td>
+      <td >Date</td>
+    </tr>
+      {% for i in val %}
+    <tr>
+      <td>{{ i.userid.fname }} {{ i.userid.lname }}</td>
+      <td>{{ i.feedback }}</td>
+      <td>&nbsp;{{ i.rating }}</td>
+      <td>{{ i.date }}</td>
+    </tr>
+      {% endfor %}
+  </table>
+</form>
+{% endblock %}

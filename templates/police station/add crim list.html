@@ -1,0 +1,36 @@
+{% extends 'police station/index.html' %}
+{% block body %}
+<form id="form1" name="form1" method="post" enctype="multipart/form-data" action="criminal">
+  <table width="261" height="159" border="1" class="table table-striped">
+    <tr>
+      <td width="80">Name</td>
+      <td width="165"><label>
+      <input type="text" name="textfield" class="form-control" required />
+</label></td>
+    </tr>
+    <tr>
+      <td>Photo</td>
+      <td><label>
+        <input type="file" name="file" class="form-control"   required />
+      </label></td>
+    </tr>
+    <tr>
+      <td>Place</td>
+      <td><label>
+        <input type="text" name="textfield2" class="form-control"    required/>
+      </label></td>
+    </tr>
+    <tr>
+      <td>Age</td>
+      <td><label>
+        <input type="text" name="textfield3"  class="form-control"  required/>
+      </label></td>
+    </tr>
+    <tr>
+      <td colspan="2"><label>
+      <input type="submit" name="Submit" value="Add" class="btn btn-outline-success" />
+</label></td>
+    </tr>
+  </table>
+</form>
+{% endblock %}

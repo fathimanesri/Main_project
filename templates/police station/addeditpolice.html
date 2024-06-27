@@ -1,0 +1,46 @@
+{% extends 'police station/index.html' %}
+{% block body %}
+<form id="form1" name="form1" method="post" action="/edit_post">
+  <table width="258" height="254" border="1" class="table table-striped">
+    <tr>
+      <td width="61">Name</td>
+      <td width="181"><label>
+        <input type="text" name="textfield" value="{{ val.Name }}" class="form-control"    required/>
+      </label></td>
+    </tr>
+    <tr>
+      <td>Place</td>
+      <td><label>
+        <input type="text" name="textfield2" value="{{ val.place }}" class="form-control"    required/>
+      </label></td>
+    </tr>
+    <tr>
+      <td>Phone</td>
+      <td><label>
+        <input type="text" name="phone" value="{{ val.phone}}"  class="form-control"    required/>
+      </label></td>
+    </tr>
+    <tr>
+      <td>Gender</td>
+      <td><label>
+        <input name="radiobutton" type="radio" value="male" {% if val.gender == "male" %}checked{% endif %}/>
+      Male<br />
+      <input name="radiobutton" type="radio" value="female" {% if val.gender == "female" %}checked{% endif %} />
+      Female</label></td>
+    </tr>
+       <tr>
+      <td>email</td>
+      <td><label>
+        <input type="text" name="textfield4" value="{{ val.email }}" class="form-control"    required />
+      </label></td>
+    </tr>
+
+
+    <tr>
+      <td colspan="2"><label>
+        <input type="submit" name="Submit" value="Add" class="btn btn-outline-success" />
+      </label></td>
+    </tr>
+  </table>
+</form>
+{% endblock %}

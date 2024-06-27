@@ -1,0 +1,31 @@
+{% extends 'admin/index.html' %}
+{% block body %}
+
+<form id="form1" name="form1" method="post" action="">
+  <table   class="table table-striped">
+    <tr  class="table table-dark">
+      <td>Name</td>
+      <td >Phone</td>
+      <td >Place</td>
+      <td>Email</td>
+      <td>&nbsp;</td>
+    </tr>
+            {% for i in val %}
+    <tr>
+       <td>{{ i.Name }}</td>
+      <td>&nbsp;{{ i.place }}</td>
+      <td>{{ i.phone }}</td>
+        <td>{{ i.email}}</td>
+
+      <td><p><a href="editstation/{{ i.id }}#constructions" class="btn btn-outline-success">Edit</a></p>
+      <p><a href="deletpolicestation/{{ i.login.id }}" class="btn btn-outline-danger">Delete</a></p></td>
+    </tr>
+                  {% endfor %}
+
+    <tr>
+      <td colspan="5"> <a href="addpolicestation#constructions" class="btn btn-outline-secondary">Add new</a></td>
+    </tr>
+
+  </table>
+</form>
+{% endblock %}

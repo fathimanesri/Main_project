@@ -1,0 +1,31 @@
+{% extends 'admin/index.html' %}
+{% block body %}
+
+<form id="form1" name="form1" method="post" action="viewcrimerecordsrch#constructions">
+  <table width="252" height="136" border="1" class="table table-striped#constructions">
+    <tr>
+      <td colspan="3" align="center">police station
+        <label>
+        <select name="select">
+            {% for i in anu %}
+            <option {% if a == i.id %}selected{% endif %} value="{{ i.id }}">{{ i.Name }}</option>{% endfor %}
+        </select>
+      </label>
+      <label>
+        <input type="submit" name="Submit" value="Search"  class="btn btn-info"/>
+      </label></td></tr>
+<tr class="table table-dark">
+      <td >Complaint</td>
+      <td >Description</td>
+      <td >Date</td>
+    </tr>
+    {% for i in val %}
+    <tr>
+      <td>{{ i.complaint}}</td>
+      <td>&nbsp;{{ i.description }}</td>
+      <td>{{ i.date }}</td>
+    </tr>
+      {% endfor %}
+  </table>
+</form>
+{% endblock %}
